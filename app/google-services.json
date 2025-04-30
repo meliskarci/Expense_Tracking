@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "38722949856",
+    "project_id": "expense-tracking-bee5d",
+    "storage_bucket": "expense-tracking-bee5d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:38722949856:android:2dc6837c18026376073685",
+        "android_client_info": {
+          "package_name": "com.meliskarci.expensetracking"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfCWkgQWuFFcLr_zTT1CTaDgH6nx_JMx8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
