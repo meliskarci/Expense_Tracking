@@ -34,23 +34,23 @@ fun NavigationGraph(
         startDestination = startDestination,
     ) {
         composable<Auth> {
-
+            AuthScreen(navController)
 
         }
         composable<Home> {
-
+            HomeScreen(navController)
         }
         composable<Detail> {
-
+            DetailScreen(navController)
         }
         composable<Settings> {
-
+            SettingsScreen(navController)
         }
         composable<Tracking> {
-
+            TrackingScreen(navController)
         }
         composable<Add> {
-
+            AddScreen(navController)
         }
     }
 }
