@@ -17,7 +17,7 @@ class AuthViewModel @Inject constructor(
 ) : ViewModel() {
 
     private val _isAuthenticated = MutableStateFlow(false)
-    val isAuthenticated = StateFlow<Boolean>
+    val isAuthenticated: StateFlow<Boolean>
         get() = _isAuthenticated.asStateFlow()
 
     init {
@@ -31,12 +31,11 @@ class AuthViewModel @Inject constructor(
                     .addOnSuccessListener {
                         _isAuthenticated.value = true
                     }
-                    .addFailureListener {
+                    .addOnFailureListener {
                         _isAuthenticated.value = false
                     }
             }
         }
-
     }
 
     fun signIn(email : String, password : String){
@@ -49,7 +48,7 @@ class AuthViewModel @Inject constructor(
             }
     }
 
-    fun isUserAuthenticated() {
+    private fun isUserAuthenticated() {
         val isActive = auth.currentUser != null
         _isAuthenticated.value = isActive
     }

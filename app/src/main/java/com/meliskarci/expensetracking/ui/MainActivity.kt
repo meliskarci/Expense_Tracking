@@ -11,8 +11,6 @@ import androidx.compose.ui.Modifier
 import androidx.navigation.compose.rememberNavController
 import com.meliskarci.expensetracking.navigation.NavigationGraph
 import com.meliskarci.expensetracking.navigation.Screen
-import com.meliskarci.expensetracking.navigation.Screen.Auth
-import com.meliskarci.expensetracking.ui.auth.RegisterScreen
 import com.meliskarci.expensetracking.ui.theme.MyappTheme
 import dagger.hilt.android.AndroidEntryPoint
  //////////  7

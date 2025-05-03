@@ -9,41 +9,22 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.BlendMode.Companion.Screen
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
+import com.meliskarci.expensetracking.navigation.Screen
 
 
 @Composable
-fun LoginScreen(navController: NavController) {
-//    val view //12
-//    val isUser //14
-//    val issucces //19
-//    val mail = remember { mutableStateOf("") }
-//    val password = remember { mutableStateOf("") }
-//
-//    lanchedeffect{
-//
-//    } //14
-//
-//    Column(modd) {
-//
-//        Button() {
-//            is issuccess  //19
-//            Text()
-//        }
-//        TextButton() {
-//            Text()
-//        }
-//    }
-
+fun LoginScreen(navController : NavController) {
     /////////////////////////  2 ///////////////////////////
     val viewmodel = hiltViewModel<AuthViewModel>() // 10
     val isUserAuthenticated = viewmodel.isAuthenticated.collectAsStateWithLifecycle() //10
@@ -78,7 +59,7 @@ fun LoginScreen(navController: NavController) {
         )
         Button(modifier = Modifier.fillMaxWidth(),
             onClick = {
-                viewmodel.singIn(mail.value, password.value)
+                viewmodel.signIn(mail.value, password.value)
             }) {
             Text(text = "Login")
         }

@@ -15,33 +15,15 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.BlendMode.Companion.Screen
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavController
+import com.meliskarci.expensetracking.navigation.Screen
 
 
 @Composable
 fun RegisterScreen(navController: NavController) {
-
-//    val viewModel //7
-//
-//    is useraut //1*
-//    val mail = remember { mutableStateOf("") }
-//    val passwordConfirmation = remember { mutableStateOf("") }
-//
-////    launhhedeffect{
-////        if (isUser
-////            navcont)
-////    } //10
-//
-//    Column(modd) {
-//
-//        Button() {
-//            Text()
-//        }
-//    }
-
 
     val viewmodel = hiltViewModel<AuthViewModel>() ///////////////// 5 //////
 
@@ -80,11 +62,13 @@ fun RegisterScreen(navController: NavController) {
             Text(text = "Register")
         }
         TextButton(
-            onClick = { /*Navigate to LoginScreen*/
-            navController.navigate(Screen.Login)}  //9
+            onClick = {
+                // Navigate to LoginScreen
+                navController.navigate(Screen.Login)
+            }
         ) {
             Text(text = "Register")
-            Text(text = "Register")
+            Text(text = "Login")
         }
     }
 }
