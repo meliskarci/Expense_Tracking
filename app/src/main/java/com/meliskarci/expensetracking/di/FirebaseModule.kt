@@ -1,6 +1,7 @@
 package com.meliskarci.expensetracking.di
 
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.database.FirebaseDatabase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,6 +16,10 @@ object FirebaseModule {
     @Provides
     fun provideFirebaseAuth() : FirebaseAuth = FirebaseAuth.getInstance()
 //////////////////////    4
-    // fun fşredatabase  //22
+
+    @Singleton
+    @Provides
+    fun provideFirebaseDatabase() : FirebaseDatabase = FirebaseDatabase.getInstance()
+
 }
 ///4
