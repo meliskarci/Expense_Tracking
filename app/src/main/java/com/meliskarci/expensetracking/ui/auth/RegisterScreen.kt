@@ -15,6 +15,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
 
 
 @Composable
@@ -37,6 +38,9 @@ fun RegisterScreen() {
 //            Text()
 //        }
 //    }
+
+
+    val viewmodel = hiltViewModel<AuthViewModel>() ///////////////// 5 //////
 //////////////////////////////////////////////////////////////  1   /////////////////////////////////////////////////////
     val mail = remember { mutableStateOf("") }
     val password = remember { mutableStateOf("") }
