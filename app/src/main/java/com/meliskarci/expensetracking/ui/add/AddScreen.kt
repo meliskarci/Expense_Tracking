@@ -16,38 +16,9 @@ import kotlinx.coroutines.flow.emptyFlow
 
 @Composable
 fun AddScreen(
-    uiState: UiState,
-    uiEffect: Flow<UiEffect>,
-    onAction: (UiAction) -> Unit,
 ) {
-    when {
-        uiState.isLoading -> LoadingBar()
-        uiState.list.isNotEmpty() -> EmptyScreen()
-        else -> AddContent()
-    }
-}
+    val viewModedel = hiltViewModel<AddViewModel> (
 
-@Composable
-fun AddContent() {
-    Box(
-        modifier = Modifier.fillMaxSize(),
-        contentAlignment = Alignment.Center,
-    ) {
-        Text(
-            text = "Add Content",
-            fontSize = 24.sp,
-        )
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun AddScreenPreview(
-    @PreviewParameter(AddScreenPreviewProvider::class) uiState: UiState,
-) {
-    AddScreen(
-        uiState = uiState,
-        uiEffect = emptyFlow(),
-        onAction = {},
     )
-}
+} //25
+

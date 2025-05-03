@@ -25,14 +25,13 @@ class MainActivity : ComponentActivity() {
             MyappTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     val navController = rememberNavController()
-                    val startDestination = Auth
+                    val startDestination = Screen.Login
                     NavigationGraph(
                         navController = navController,
                         startDestination = startDestination,
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
-                RegisterScreen()
             }
         }
     }

@@ -21,6 +21,9 @@ import com.meliskarci.expensetracking.ui.settings.SettingsScreen
 import com.meliskarci.expensetracking.ui.tracking.TrackingScreen
 import com.meliskarci.expensetracking.ui.tracking.TrackingViewModel
 import com.meliskarci.expensetracking.ui.add.AddScreen
+import com.meliskarci.expensetracking.ui.auth.LoginScreen
+import com.meliskarci.expensetracking.ui.auth.RegisterScreen
+import kotlinx.serialization.Serializable
 
 @Composable
 fun NavigationGraph(
@@ -52,5 +55,14 @@ fun NavigationGraph(
         composable<Add> {
             AddScreen(navController)
         }
+
+        composable<Screen.Register> {
+            RegisterScreen(navController) //9
+        }
+        composable<Screen.Login>{
+            LoginScreen(navController)   // 11
+        }
+
+
     }
 }
