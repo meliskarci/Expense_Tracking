@@ -10,19 +10,21 @@ sealed interface Screen {
     data object Home : Screen
 
     @Serializable
-    data object Detail : Screen
-
-    @Serializable
     data object Settings : Screen
 
     @Serializable
     data object Tracking : Screen
 
     @Serializable
-    data object Register : Screen /////  9
+    data object Add : Screen
 
     @Serializable
-    data object Login : Screen /////  11
+    data object Register : Screen
 
-    // 31 list screen
+    @Serializable
+    data object Login : Screen
+
+    @Serializable
+    data object List : Screen
+
 }

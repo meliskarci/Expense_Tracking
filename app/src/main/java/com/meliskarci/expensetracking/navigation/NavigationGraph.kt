@@ -1,24 +1,18 @@
 package com.meliskarci.expensetracking.navigation
 
+import HomeScreen
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
-import com.meliskarci.expensetracking.navigation.Screen.Auth
-import com.meliskarci.expensetracking.navigation.Screen.Home
-import com.meliskarci.expensetracking.navigation.Screen.Detail
-import com.meliskarci.expensetracking.navigation.Screen.Settings
-import com.meliskarci.expensetracking.navigation.Screen.Tracking
-import com.meliskarci.expensetracking.navigation.Screen.Add
-import com.meliskarci.expensetracking.ui.add.AddScreen
-import com.meliskarci.expensetracking.ui.auth.AuthScreen
-import com.meliskarci.expensetracking.ui.home.HomeScreen
-import com.meliskarci.expensetracking.ui.detail.DetailScreen
-import com.meliskarci.expensetracking.ui.settings.SettingsScreen
-import com.meliskarci.expensetracking.ui.tracking.TrackingScreen
-import com.meliskarci.expensetracking.ui.auth.LoginScreen
-import com.meliskarci.expensetracking.ui.auth.RegisterScreen
+import com.meliskarci.expensetracking.presentation.auth.AuthScreen
+import com.meliskarci.expensetracking.presentation.settings.SettingsScreen
+import com.meliskarci.expensetracking.presentation.tracking.TrackingScreen
+import com.meliskarci.expensetracking.presentation.add.AddScreen
+import com.meliskarci.expensetracking.presentation.auth.LoginScreen
+import com.meliskarci.expensetracking.presentation.auth.RegisterScreen
+import com.meliskarci.expensetracking.presentation.list.ListScreen
 
 @Composable
 fun NavigationGraph(
@@ -31,31 +25,29 @@ fun NavigationGraph(
         navController = navController,
         startDestination = startDestination,
     ) {
-        composable<Auth> {
+        composable<Screen.Auth> {
             AuthScreen(navController)
-
         }
-        composable<Home> {
+        composable<Screen.Home> {
             HomeScreen(navController)
         }
-        composable<Detail> {
-            DetailScreen(navController)
-        }
-        composable<Settings> {
+        composable<Screen.Settings> {
             SettingsScreen(navController)
         }
-        composable<Tracking> {
-            TrackingScreen(navController)
+        composable<Screen.Tracking> {
+            TrackingScreen()
         }
-        composable<Add> {
+        composable<Screen.Add> {
             AddScreen(navController)
-
         }
         composable<Screen.Register> {
-            RegisterScreen(navController) //9
+            RegisterScreen(navController)
         }
         composable<Screen.Login>{
-            LoginScreen(navController)   // 11
+            LoginScreen(navController)
+        }
+        composable<Screen.List>{
+            ListScreen(navController)
         }
     }
 }

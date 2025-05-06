@@ -59,6 +59,8 @@ dependencies {
     implementation(libs.material)
     implementation(libs.firebase.database)
     implementation(libs.firebase.auth)
+    implementation(libs.room.common.jvm)
+    implementation(libs.litert.support.api)
     testImplementation(libs.junit)
     androidTestImplementation(libs.junit.ext)
     androidTestImplementation(libs.espresso.core)
@@ -85,4 +87,11 @@ dependencies {
 
     // Kotlinx Serialization
     implementation(libs.kotlinx.serialization)
+
+    //Icons Library
+    implementation("androidx.compose.material:material-icons-extended:$2024.05.00")
+
+    // Charts Library
+    implementation (libs.compose.charts)
+
 }

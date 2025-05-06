@@ -13,13 +13,17 @@ activity-compose = "1.9.1"
 compose-bom = "2024.08.00"
 hilt = "2.52"
 hiltNavigationCompose = "1.2.0"
-navigation = "2.7.7"
+navigation = "2.8.9"
 kotlinxSerialization = "1.7.3"
 googleGmsGoogleServices = "4.4.2"
 firebaseDatabase = "21.0.0"
 firebaseAuth = "23.2.0"
+roomCommonJvm = "2.7.1"
+litertSupportApi = "1.2.0"
+composeCharts = "0.1.2"
 
 [libraries]
+compose-charts = { module = "io.github.ehsannarmani:compose-charts", version.ref = "composeCharts" }
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 junit-ext = { group = "androidx.test.ext", name = "junit", version.ref = "junit-ext" }
@@ -44,6 +48,8 @@ navigation-compose = { group = "androidx.navigation", name = "navigation-compose
 kotlinx-serialization = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerialization" }
 firebase-database = { group = "com.google.firebase", name = "firebase-database", version.ref = "firebaseDatabase" }
 firebase-auth = { group = "com.google.firebase", name = "firebase-auth", version.ref = "firebaseAuth" }
+room-common-jvm = { group = "androidx.room", name = "room-common-jvm", version.ref = "roomCommonJvm" }
+litert-support-api = { group = "com.google.ai.edge.litert", name = "litert-support-api", version.ref = "litertSupportApi" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
