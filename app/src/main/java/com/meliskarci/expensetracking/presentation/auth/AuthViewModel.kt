@@ -2,9 +2,9 @@ package com.meliskarci.expensetracking.presentation.auth
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.meliskarci.expensetracking.domain.usecase.CurrentUserUseCase
-import com.meliskarci.expensetracking.domain.usecase.SignInWithEmailAndPasswordUseCase
-import com.meliskarci.expensetracking.domain.usecase.SignUpWithEmailAndPasswordUseCase
+import com.meliskarci.expensetracking.domain.usecase.auth.CurrentUserUseCase
+import com.meliskarci.expensetracking.domain.usecase.auth.SignInWithEmailAndPasswordUseCase
+import com.meliskarci.expensetracking.domain.usecase.auth.SignUpWithEmailAndPasswordUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
