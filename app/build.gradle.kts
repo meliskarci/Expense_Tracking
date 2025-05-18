@@ -61,6 +61,8 @@ dependencies {
     implementation(libs.firebase.auth)
     implementation(libs.room.common.jvm)
     implementation(libs.litert.support.api)
+    implementation(libs.datastore.core.android)
+    implementation(libs.datastore.preferences.core.android)
     testImplementation(libs.junit)
     androidTestImplementation(libs.junit.ext)
     androidTestImplementation(libs.espresso.core)
@@ -93,5 +95,8 @@ dependencies {
 
     // Charts Library
     implementation (libs.compose.charts)
+
+    // Data Store
+    implementation(libs.datastore.preferences)
 
 }

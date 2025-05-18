@@ -27,9 +27,9 @@ data class BottomNavItem(
 fun BottomBar(navController: NavController) {
 
     val items = listOf(
-        BottomNavItem("Home", Icons.Default.Home, Screen.Home),
-        BottomNavItem("Add", Icons.Default.Add, Screen.Add),
-        BottomNavItem("Settings", Icons.Default.Settings, Screen.Settings)
+        BottomNavItem("Ana Sayfa", Icons.Default.Home, Screen.Home),
+        BottomNavItem("Ekle", Icons.Default.Add, Screen.Add),
+        BottomNavItem("Ayarlar", Icons.Default.Settings, Screen.Settings)
     )
 
     val navBackStackEntry by navController.currentBackStackEntryAsState()

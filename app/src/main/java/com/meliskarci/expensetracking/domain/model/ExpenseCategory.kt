@@ -20,3 +20,4 @@ enum class ExpenseCategory(val displayName: String, val icon: ImageVector) {
     HEALTH(displayName = "Sağlık", icon = Icons.Outlined.LocalHospital),
     OTHER(displayName = "Diğer", icon = Icons.Outlined.Category);
 }
+

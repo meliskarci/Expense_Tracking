@@ -35,6 +35,7 @@ fun LoginScreen(navController : NavController){
         if (isUserAuthenticated.value){
             navController.navigate(Screen.Home)
         }
+
     }
 
     Column(modifier = Modifier.fillMaxSize().padding(15.dp),

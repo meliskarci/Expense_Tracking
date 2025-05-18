@@ -9,6 +9,6 @@ class MainApp : Application(){
     override fun onCreate() {
         super.onCreate()
         FirebaseApp.initializeApp(this)
-    }//// 6
+    }
 }
 

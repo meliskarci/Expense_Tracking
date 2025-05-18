@@ -17,12 +17,15 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavDestination.Companion.hierarchy
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.meliskarci.expensetracking.navigation.NavigationGraph
 import com.meliskarci.expensetracking.navigation.Screen
 import com.meliskarci.expensetracking.presentation.components.BottomBar
+import com.meliskarci.expensetracking.presentation.settings.SettingsViewModel
 import com.meliskarci.expensetracking.ui.theme.MyappTheme
 import dagger.hilt.android.AndroidEntryPoint
 import kotlin.reflect.KClass
@@ -34,7 +37,13 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContent {
-            MyappTheme {
+
+            val viewModel = hiltViewModel<SettingsViewModel>()
+            val isDarkMode = viewModel.isDarkMode.collectAsStateWithLifecycle()
+
+            MyappTheme(
+                darkTheme = isDarkMode.value
+            ) {
                 val navController = rememberNavController()
                 val startDestination = Screen.Login
                 val navBackStackEntry by navController.currentBackStackEntryAsState()
@@ -55,10 +64,10 @@ class MainActivity : ComponentActivity() {
                         // Yalnızca Auth sayfalarında değilse TopBar'ı göster
                         if (!isAuthScreen) {
                             val title = when {
-                                isCurrentScreen(Screen.Home::class) -> "Home Screen"
-                                isCurrentScreen(Screen.List::class) -> "List Screen"
-                                isCurrentScreen(Screen.Settings::class) -> "Settings"
-                                isCurrentScreen(Screen.Add::class) -> "Add Expense"
+                                isCurrentScreen(Screen.Home::class) -> "Ana Sayfa"
+                                isCurrentScreen(Screen.List::class) -> "Harcamalarım"
+                                isCurrentScreen(Screen.Settings::class) -> "Ayarlar"
+                                isCurrentScreen(Screen.Add::class) -> "Harcama Ekle"
                                 // Uygulamanızdaki diğer ekranları buraya ekleyebilirsiniz
                                 else -> "Not Found"
                             }

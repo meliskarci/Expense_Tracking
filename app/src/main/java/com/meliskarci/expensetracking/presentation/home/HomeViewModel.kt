@@ -24,10 +24,9 @@ import kotlin.collections.emptyList
 
 @HiltViewModel
 class HomeViewModel @Inject constructor(
-    private val getAllExpensesUseCase: GetAllExpensesUseCase,
+    private val db: FirebaseDatabase,
     private val currentUserUseCase: CurrentUserUseCase
 ) : ViewModel() {
-
 
     private val _isAuthenticated = MutableStateFlow(false)
     val isAuthenticated: StateFlow<Boolean>
@@ -46,8 +45,7 @@ class HomeViewModel @Inject constructor(
         getAllExpense()
     }
 
-
-    private fun isUserAuthenticated() {
+    fun isUserAuthenticated() {
         viewModelScope.launch {
             val isActive = currentUserUseCase().first() != null
             _isAuthenticated.value = isActive
@@ -56,19 +54,34 @@ class HomeViewModel @Inject constructor(
 
     private fun getAllExpense() {
         viewModelScope.launch {
-            try {
-                val userId = currentUserUseCase().first()?.uid ?: return@launch
-                getAllExpensesUseCase.invoke(userId).collect {expenses ->
+            val userId = currentUserUseCase().first()?.uid ?: return@launch
+
+            db.getReference(REFS_EXPENSES).addValueEventListener(object : ValueEventListener {
+                override fun onDataChange(snapshot: DataSnapshot) {
+
+                    val expenses = mutableListOf<Expense>()
+
+                    for (data in snapshot.children) {
+
+                        val expense = data.getValue(Expense::class.java)
+
+                        if (expense != null && expense.userId == userId) {
+                            expenses.add(expense)
+                        }
+                    }
                     _expenses.value = expenses
 
-                    //Veriler yüklendikten SONRA günlük toplamı hesapla
+                    // Veriler yüklendikten SONRA günlük toplamı hesapla
                     calculateDailyTotal(expenses)
                 }
-            } catch (error: Exception) {
-                Log.e("Firebase", "Veri çekme iptal edildi: ${error.message}")
-            }
+
+                override fun onCancelled(error: DatabaseError) {
+                    Log.e("Firebase", "Veri çekme iptal edildi: ${error.message}")
+                }
+            })
         }
     }
+
 
 
 

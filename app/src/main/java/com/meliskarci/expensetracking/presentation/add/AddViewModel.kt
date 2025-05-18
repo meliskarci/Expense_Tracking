@@ -7,6 +7,7 @@ import com.meliskarci.expensetracking.domain.model.Expense
 import com.meliskarci.expensetracking.domain.model.ExpenseCategory
 import com.meliskarci.expensetracking.domain.usecase.auth.CurrentUserUseCase
 import com.meliskarci.expensetracking.domain.usecase.db.AddExpenseUseCase
+import com.meliskarci.expensetracking.utils.Constants.REFS_EXPENSES
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
@@ -15,7 +16,7 @@ import javax.inject.Inject
 
 @HiltViewModel
 class AddViewModel @Inject constructor(
-    private val addExpenseUseCase: AddExpenseUseCase,
+    private val db : FirebaseDatabase,
     private val currentUserUseCase: CurrentUserUseCase
 ) :ViewModel(){
 
@@ -27,9 +28,22 @@ class AddViewModel @Inject constructor(
         date: Date
     ) {
         viewModelScope.launch {
-            val currentUser = currentUserUseCase().first() ?: return@launch
-            val userId = currentUser.uid
-            addExpenseUseCase(userId,title, description, amount, category, date)
+
+            val userId = currentUserUseCase().first()?.uid ?: return@launch
+            val ref = db.reference.child(REFS_EXPENSES).push()
+            val id = ref.key ?: return@launch
+
+            val expense = Expense(
+                id = id,
+                userId = userId,
+                title = title,
+                description = description,
+                amount = amount,
+                category = category,
+                date = date
+            )
+
+            ref.setValue(expense)
         }
     }
 }

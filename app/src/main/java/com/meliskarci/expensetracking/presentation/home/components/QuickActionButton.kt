@@ -19,7 +19,6 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.meliskarci.expensetracking.presentation.tracking.TrackingScreen
 
 @Composable
 fun QuickActionButton(
@@ -55,10 +54,4 @@ fun QuickActionButton(
             textAlign = TextAlign.Center
         )
     }
-}
-
-@Preview
-@Composable
-fun QuickActionButtonPreview() {
-    QuickActionButton()
 }

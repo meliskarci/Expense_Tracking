@@ -22,7 +22,7 @@ fun QuickActionsRow(navController: NavController) {
         QuickActionButton(
             icon = Icons.Outlined.Analytics,
             text = "Raporlar",
-            onClick = { navController.navigate(Screen.Tracking) }
+            onClick = {  }
         )
         QuickActionButton(
             icon = Icons.Outlined.Category,
@@ -30,10 +30,4 @@ fun QuickActionsRow(navController: NavController) {
             onClick = {  }
         )
     }
-}
-
-@Preview
-@Composable
-fun QuickActionsRowPreview() {
-    QuickActionsRow()
 }

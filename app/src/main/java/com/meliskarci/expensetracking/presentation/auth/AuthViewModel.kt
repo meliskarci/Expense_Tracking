@@ -47,7 +47,7 @@ class AuthViewModel @Inject constructor(
 
     private fun isUserAuthenticated() {
         viewModelScope.launch {
-            currentUserUseCase.invoke().collect { it ->
+            currentUserUseCase().collect { it ->
                 _isAuthenticated.value = it != null
             }
         }

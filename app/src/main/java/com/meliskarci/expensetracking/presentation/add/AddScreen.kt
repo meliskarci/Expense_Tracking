@@ -61,11 +61,9 @@ import java.util.*
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AddScreen(
-    navController : NavController
+    navController: NavController
 ) {
-
     val viewModel = hiltViewModel<AddViewModel>()
-
     var title by remember { mutableStateOf("") }
     var description by remember { mutableStateOf("") }
     var amount by remember { mutableStateOf("") }
@@ -74,7 +72,7 @@ fun AddScreen(
     var showDatePicker by remember { mutableStateOf(false) }
     var showCategoryPicker by remember { mutableStateOf(false) }
 
-    //Animation
+    // Animasyon ekleme
     val amountScale by animateFloatAsState( //1f
         targetValue = if (amount.isNotBlank()) 1.1f else 1f,
         animationSpec = spring(
