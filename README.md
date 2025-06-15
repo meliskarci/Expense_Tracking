@@ -50,7 +50,7 @@
 - **Kotlin Flow** - Reaktif programlama  
 - **MVVM Architecture** - Mimari tasarım deseni
 
-
+## 📸 Ekran Görüntüleri
 <p align="center">
   <img src="https://github.com/user-attachments/assets/ba78cb89-d20f-4f9d-9d9b-d15f166a0a99" width="200" />
   <img src="https://github.com/user-attachments/assets/b792d947-7e2f-4898-aaf1-60e780d0c3cd" width="200" />
