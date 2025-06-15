@@ -1,3 +1,45 @@
+💰 Expense Tracking App
+Modern bir kişisel finans yönetimi uygulaması - Firebase teknolojileri ile geliştirilmiş kapsamlı harcama takip platformu.
+🚀 Özellikler
+🔐 Güvenlik & Kimlik Doğrulama
+
+Firebase Authentication ile güvenli kullanıcı kayıt sistemi
+Çok faktörlü kimlik doğrulama desteği
+Kişiselleştirilmiş kullanıcı deneyimi
+
+📊 Harcama Yönetimi
+
+Kategorize edilmiş harcama takibi - günlük giderlerinizi düzenli tutun
+Bütçe planlama araçları - finansal hedeflerinizi belirleyin ve takip edin
+Gerçek zamanlı harcama analizi - anlık finansal durumunuzu görün
+
+☁️ Bulut Teknolojileri
+
+Firebase ile bulut tabanlı veri yönetimi
+Cihazlar arası senkronizasyon
+Güvenli veri saklama
+
+🏗️ Teknik Özellikler
+🔧 Mimari
+
+MVVM (Model-View-ViewModel) mimarisi
+Temiz kod prensipleri uygulaması
+Modüler ve sürdürülebilir kod yapısı
+
+⚡ Reaktif Programlama
+
+Kotlin Flow ile reaktif veri akışı
+Anlık veri güncellemeleri
+Performans optimizasyonu
+
+🛠️ Kullanılan Teknolojiler
+
+Kotlin - Ana programlama dili
+Firebase Authentication - Kullanıcı yönetimi
+Firebase Firestore - Veri tabanı
+Kotlin Flow - Reaktif programlama
+MVVM Architecture - Mimari tasarım deseni
+
 <p align="center">
   <img src="https://github.com/user-attachments/assets/ba78cb89-d20f-4f9d-9d9b-d15f166a0a99" width="200" />
   <img src="https://github.com/user-attachments/assets/b792d947-7e2f-4898-aaf1-60e780d0c3cd" width="200" />
